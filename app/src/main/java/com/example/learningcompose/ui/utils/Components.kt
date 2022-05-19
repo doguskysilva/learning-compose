@@ -7,11 +7,11 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 
 @Composable
-fun TextDefault(text: String) {
+fun TextDefault(text: String, color: Color = Color.Black) {
     Text(
         text = text,
         fontSize = MaterialTheme.typography.headlineMedium.fontSize,
         fontWeight = FontWeight.Bold,
-        color = Color.White
+        color = color
     )
 }

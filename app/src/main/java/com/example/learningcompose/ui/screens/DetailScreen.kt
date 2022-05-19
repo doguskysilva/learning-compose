@@ -11,19 +11,18 @@ import androidx.compose.ui.tooling.preview.Preview
 import com.example.learningcompose.ui.utils.TextDefault
 
 @Composable
-fun HomeScreen() {
+fun DetailScreen() {
     Box(
         modifier = Modifier
-            .fillMaxSize()
-            .background(Color.Green),
+            .fillMaxSize(),
         contentAlignment = Alignment.Center
     ) {
-        TextDefault(text = "Home")
+        TextDefault(text = "Home", Color.Red)
     }
 }
 
 @Composable
-@Preview
-fun HomeScreenPreview() {
-    HomeScreen()
+@Preview(showBackground = true)
+fun DetailScreenPreview() {
+    DetailScreen()
 }
