@@ -1,28 +1,39 @@
 package com.example.learningcompose.ui.screens
 
-import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.material3.Button
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.navigation.NavController
+import androidx.navigation.compose.rememberNavController
 import com.example.learningcompose.ui.utils.TextDefault
 
 @Composable
-fun DetailScreen() {
+fun DetailScreen(navController: NavController) {
     Box(
         modifier = Modifier
             .fillMaxSize(),
         contentAlignment = Alignment.Center
     ) {
-        TextDefault(text = "Home", Color.Red)
+        Column(horizontalAlignment = Alignment.CenterHorizontally) {
+            TextDefault(text = "Detail", MaterialTheme.colorScheme.primary)
+            Button(onClick = { navController.navigate(Screen.Home.route) {
+                popUpTo(Screen.Home.route) { inclusive = true }
+            } }) {
+                Text(text = "To Back")
+            }
+        }
     }
 }
 
 @Composable
 @Preview(showBackground = true)
 fun DetailScreenPreview() {
-    DetailScreen()
+    DetailScreen(rememberNavController())
 }
