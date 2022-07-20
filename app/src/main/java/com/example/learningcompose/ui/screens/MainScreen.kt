@@ -4,5 +4,6 @@ import androidx.compose.runtime.Composable
 @Composable
 fun MainScreen() {
     //HomeScreen()
-    WellnessScreen()
+    //WellnessScreen()
+    ExamplesViewModelScreen()
 }
